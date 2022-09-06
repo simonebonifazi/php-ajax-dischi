@@ -1,6 +1,11 @@
-Vue.config.devtols = true;
-
 const app = new Vue({
-    el:'#root',
-    data: {}
+    el: '#root',
+    data: {
+        discs:[],
+    },
+    mounted(){
+        axios.get('../../api/index.php').then(res => {
+            this.discs = res.data;
+        })
+    }
 })

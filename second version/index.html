@@ -16,34 +16,39 @@
 <body>
 <div id="root">
 
-<header>
-    <figure>
-        <img src="https://th.bing.com/th/id/R.57dd160d1e8f82b1113ca3f73393621c?rik=EHp%2bG6a6uyaHaA&amp;pid=ImgRaw&amp;r=0"
-            alt="logo">
-    </figure><select name="search-for-genre" id="search-for-genre">
-        <option value="">--Seleziona un Genere--</option>
-        <option value="Rock">Rock</option>
-        <option value="Pop">Pop</option>
-        <option value="Jazz">Jazz</option>
-        <option value="Metal">Metal</option>
-    </select>
-</header>
-<main>
-    <div class="container deck">
-        <div class="card">
-            <figure>
-                <img src="" alt="">
-                <figcaption>
-                    <h3></h3>
-                    <h6></h6>
-                    <h6></h6>
-                </figcaption>
-            </figure>
+    <header>
+        <figure>
+            <img src="https://th.bing.com/th/id/R.57dd160d1e8f82b1113ca3f73393621c?rik=EHp%2bG6a6uyaHaA&amp;pid=ImgRaw&amp;r=0"
+                alt="logo">
+        </figure><select name="search-for-genre" id="search-for-genre">
+            <option value="">--Seleziona un Genere--</option>
+            <option value="Rock">Rock</option>
+            <option value="Pop">Pop</option>
+            <option value="Jazz">Jazz</option>
+            <option value="Metal">Metal</option>
+        </select>
+    </header>
+    <main>
+        <div class="container deck">
+            
+            <div v-if="discs.length" v-for="disc in discs">
+                <figure>
+                    <img :src="disc.poster" :alt="disc.title">
+                    <figcaption>
+                        <h3>{{disc.title}}</h3>
+                        <h6>{{disc.author}}</h6>
+                        <h6>{{disc.year}}</h6>
+                    </figcaption>
+                </figure>
+                <h4 v-else> Nessunn disco trovato</h4>
+            </div>
+<!--             
+            <div class="card">
+            </div>
+         -->
         </div>
-       
-    </div>
 
-</main>
+    </main>
 </div>
 
 <!-- js -->
