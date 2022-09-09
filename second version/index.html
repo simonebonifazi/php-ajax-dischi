@@ -8,14 +8,14 @@
     <!-- css added -->
     <link rel="stylesheet" href="../css/style.css">
     <!-- VueJS added -->
-    <script src="https://cdn.jsdelvir.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+    <!-- <script src="https://cdn.jsdelvir.net/npm/vue@2/dist/vue.js"></script> -->
     <!-- AXIOS added -->
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js' integrity='sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A==' crossorigin='anonymous'></script>
     <title>Dischi php</title>
 </head>
 <body>
 <div id="root">
-
     <header>
         <figure>
             <img src="https://th.bing.com/th/id/R.57dd160d1e8f82b1113ca3f73393621c?rik=EHp%2bG6a6uyaHaA&amp;pid=ImgRaw&amp;r=0"
@@ -29,9 +29,8 @@
         </select>
     </header>
     <main>
-        <div class="container deck">
-            
-            <div v-if="discs.length" v-for="disc in discs">
+        <div class="container deck">            
+            <div v-if="discs.length" v-for="disc in discs" class="disc">
                 <figure>
                     <img :src="disc.poster" :alt="disc.title">
                     <figcaption>
@@ -40,19 +39,14 @@
                         <h6>{{disc.year}}</h6>
                     </figcaption>
                 </figure>
-                <h4 v-else> Nessunn disco trovato</h4>
             </div>
-<!--             
-            <div class="card">
-            </div>
-         -->
+           <h4 v-else> Nessunn disco trovato</h4>
         </div>
-
     </main>
 </div>
 
 <!-- js -->
-<script src="js/script.js"></script>
+<script src="./js/script.js"></script>
 </body>
 
 </html>
